@@ -20,6 +20,7 @@ public class preface {
 				int count = num/numVals[i];
 				System.out.println(count + " " + numVals[i]);
 				num = num%numVals[i];
+				
 			}
 		}
 		
