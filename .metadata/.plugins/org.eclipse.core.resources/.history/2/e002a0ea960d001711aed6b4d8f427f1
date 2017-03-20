@@ -1,0 +1,11 @@
+import java.io.*;
+import java.util.*;
+
+public class preface {
+
+	public static void main(String[] args) throws IOException {
+		BufferReader f = new BufferReader(new FileReader("preface.in"));
+		
+	}
+
+}
