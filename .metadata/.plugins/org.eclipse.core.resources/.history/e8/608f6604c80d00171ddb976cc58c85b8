@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+public class preface {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader f = new BufferedReader(new FileReader("preface.in"));
+		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("preface.out")));
+		int n = Integer.parseInt(f.readLine());
+		//I 1,L 50,M 1000,V 5,C 100,X 10,D 500
+		char[] numerals = {'I','V','X','L','C','D','M'};
+		int[] numVals = {1,5,10,50,100,500,1000};
+		int[] numCount = new int[numerals.length];
+		int num = n;
+		String st = "";
+		for(int i = numVals.length-1; i >= 0; i--){
+			int count = num/numVals[i];
+			System.out.println(count + " " + num + " " + i%2);
+			if(count == 0 && i%2 == 0 && i > 2){
+				System.out.println(num/numVals[i-2]);
+			}
+			else if(count == 0){
+				
+			}
+			else{
+				//.out.println(count + " " + numVals[i]);
+				num = num%numVals[i];
+				for(int j = 0; j < count; j++){
+					st += numerals[i];
+				}
+				
+				if(count > 3){
+					st += numerals[i] + "" + numerals[i+1];
+				}
+			}
+		}
+		System.out.println(st);	
+		
+	}
+	
+}
