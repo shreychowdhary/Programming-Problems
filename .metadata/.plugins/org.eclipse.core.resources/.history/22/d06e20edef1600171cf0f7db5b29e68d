@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+
+public class traversal {
+	static class Node{
+		int id;
+		public Node left;
+		public Node right;
+		public Node(int _id){
+			id = _id;
+		}
+	}
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader f = new BufferedReader(new FileReader("traversal.in"));
+		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("traversal.out")));
+		int n = Integer.parseInt(f.readLine());
+		//skip first line
+		HashMap<Integer,Node> tree = new HashMap<Integer,Node>();
+		
+		for(int i = 0; i < n; i++){
+			StringTokenizer st = new StringTokenizer(f.readLine());
+			int root = Integer.parseInt(st.nextToken());
+			tree.put(root,new Node(root));
+			int left = Integer.parseInt(st.nextToken());
+			tree.put(left,new Node(left));
+			int right = Integer.parseInt(st.nextToken());
+			tree.put(right,new Node(right));
+			tree.get(root).left = tree.get(left);
+			tree.get(root).right = tree.get(left);
+		}
+		
+	}
+
+}

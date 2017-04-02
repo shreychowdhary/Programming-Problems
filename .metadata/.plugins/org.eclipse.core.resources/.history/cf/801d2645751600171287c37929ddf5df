@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+
+public class traversal {
+	private class Node{
+		int id;
+		public Node parent;
+		public List<Integer> children;
+		public Node(int _id){
+			id = _id;
+		}
+		
+		
+	}
+	public static void main(String[] args) throws IOException {
+		BufferedReader f = new BufferedReader(new FileReader("traversal.in"));
+		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("traversal.out")));
+		int n = Integer.parseInt(f.readLine());
+		Node root = new Node(0);
+		for(int i = 0; i < n; i++){
+			StringTokenizer st = new StringTokenizer(f.readLine());
+			
+		}
+	}
+
+}

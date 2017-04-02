@@ -1,0 +1,60 @@
+import java.io.*;
+import java.util.*;
+
+public class traversal {
+	static class Node{
+		int id;
+		public Node left;
+		public Node right;
+		public Node(int _id){
+			id = _id;
+		}
+	}
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader f = new BufferedReader(new FileReader("traversal.in"));
+		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("traversal.out")));
+		int n = Integer.parseInt(f.readLine());
+		//skip first line
+		HashMap<Integer,Node> tree = new HashMap<Integer,Node>();
+		List<String> paths = new ArrayList<String>();
+		for(int i = 0; i < n; i++){
+			StringTokenizer st = new StringTokenizer(f.readLine());
+			int root = Integer.parseInt(st.nextToken());
+			tree.put(root,new Node(root));
+			int left = Integer.parseInt(st.nextToken());
+			tree.put(left,new Node(left));
+			int right = Integer.parseInt(st.nextToken());
+			tree.put(right,new Node(right));
+			tree.get(root).left = tree.get(left);
+			tree.get(root).right = tree.get(right);
+			System.out.println(root + " " + left + " " + right);
+		}
+		
+		System.out.println(tree.get(2).right.id);
+		dfs(tree.get(0),"",paths);
+		for (String path : paths) {
+			//System.out.println(path);
+		}
+	}
+	
+	public static void dfs(int curNode,HashMap<Integer,Node> tree, String curPath, List<String> paths){
+		System.out.println(curNode.id + " " + curNode.right);
+		curPath += Integer.toString(curNode.id);
+		if(curNode.left == null){
+			paths.add(curPath);
+		}
+		else{
+			System.out.println(curNode.id + " " + curNode.left.id);
+			dfs(curNode.left,curPath,paths);
+		}
+		if(curNode.right == null){
+			paths.add(curPath);
+		}
+		else{
+			System.out.println(curNode.id + " " + curNode.right.id);
+			dfs(curNode.right,curPath,paths);
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+import java.util.*;
+import java.io.*;
+/*
+ * ID: shrey.c1
+ * LANG: JAVA
+ * TASK: runaround
+ */
+public class runaround {
+
+	public static void main(String[] args) throws IOException{
+		BufferedReader f = new BufferedReader(new FileReader("runaround.in"));
+	}
+}
