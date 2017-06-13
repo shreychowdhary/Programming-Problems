@@ -15,6 +15,7 @@ public class traversal {
 	public static void main(String[] args) throws IOException {
 		BufferedReader f = new BufferedReader(new FileReader("traversal.in"));
 		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("traversal.out")));
+		long startTime = System.currentTimeMillis();
 		int n = Integer.parseInt(f.readLine());
 		//skip first line
 		HashMap<Integer,Node> tree = new HashMap<Integer,Node>();
@@ -47,6 +48,7 @@ public class traversal {
 		}
 		out.print(maxDistance);
 		out.close();
+		System.out.println(System.currentTimeMillis() - startTime);
 	}
 	
 	public static void dfs(int curIndex,HashMap<Integer,Node> tree, List<Integer> curPath, List<List<Integer>> paths){
