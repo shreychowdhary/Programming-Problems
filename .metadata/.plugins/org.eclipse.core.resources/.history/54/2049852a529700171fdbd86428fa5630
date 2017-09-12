@@ -1,0 +1,13 @@
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		int w = cin.nextInt();
+		float b = cin.nextFloat();
+		if(b-w < 0){
+			System.out.println(b);
+		}
+
+}

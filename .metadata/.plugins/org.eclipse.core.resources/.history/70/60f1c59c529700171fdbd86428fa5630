@@ -1,0 +1,16 @@
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		int w = cin.nextInt();
+		float b = cin.nextFloat();
+		if(b-w < 0 || w % 5 != 0){
+			System.out.println(b);
+		}
+		else{
+			System.out.println("%2f",b-w-.5f);
+		}
+	}
+}
