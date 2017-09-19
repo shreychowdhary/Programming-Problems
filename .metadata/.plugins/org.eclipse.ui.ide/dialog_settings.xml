@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\area5\Documents\Programming-Problems\IPL Week 2"/>
+		<item value="C:\Users\area5\.android\IPL Week 2"/>
+		<item value="C:\Users\area5\Documents\Programming-Problems\IPL Week 1"/>
+		<item value="C:\Users\area5\Documents\Programming-Problems"/>
 		<item value="C:\Users\area5\Documents\USACO"/>
 	</list>
 	<section name="WORKBENCH_SETTINGS">
