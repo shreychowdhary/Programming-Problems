@@ -51,7 +51,7 @@ void insert(TrieNode *curNode, string key) {
 void visitAllNodes(TrieNode *curNode) {
 	for (int i = 0; i < 26; i++) {
 		if (curNode->children[i] != NULL) {
-			cout<<(char)('a'+i)<<endl;
+			cout<<(char)('a'+i)<<(curNode->children[i]->isEndWord?"*":"")<<endl;
 			visitAllNodes(curNode->children[i]);
 		}
 	}
@@ -75,7 +75,7 @@ int main() {
 		cin >> tmp;
 		insert(root, tmp);
 	}
-
+	visitAllNodes(root);
 	int numSearches = 0;
 	cin >> numSearches;
 	for(int i = 0; i < numSearches; i++) {
