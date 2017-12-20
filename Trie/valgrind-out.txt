@@ -1,0 +1,133 @@
+==16801== Memcheck, a memory error detector
+==16801== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==16801== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==16801== Command: ./main
+==16801== Parent PID: 15267
+==16801== 
+--16801-- 
+--16801-- Valgrind options:
+--16801--    --leak-check=full
+--16801--    --show-leak-kinds=all
+--16801--    --track-origins=yes
+--16801--    --verbose
+--16801--    --log-file=valgrind-out.txt
+--16801-- Contents of /proc/version:
+--16801--   Linux version 4.10.0-40-generic (buildd@lcy01-amd64-005) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.5) ) #44~16.04.1-Ubuntu SMP Thu Nov 9 15:37:44 UTC 2017
+--16801-- 
+--16801-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--16801-- Page sizes: currently 4096, max supported 4096
+--16801-- Valgrind library directory: /usr/lib/valgrind
+--16801-- Reading syms from /home/dino/Documents/Programming-Problems/Trie/main
+--16801-- Reading syms from /lib/x86_64-linux-gnu/ld-2.23.so
+--16801--   Considering /lib/x86_64-linux-gnu/ld-2.23.so ..
+--16801--   .. CRC mismatch (computed 9bc477cd wanted 3da2f12a)
+--16801--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.23.so ..
+--16801--   .. CRC is valid
+--16801-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--16801--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--16801--   .. CRC mismatch (computed eea41ea9 wanted 2009db78)
+--16801--    object doesn't have a symbol table
+--16801--    object doesn't have a dynamic symbol table
+--16801-- Scheduler: using generic scheduler lock implementation.
+--16801-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==16801== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-16801-by-dino-on-???
+==16801== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-16801-by-dino-on-???
+==16801== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-16801-by-dino-on-???
+==16801== 
+==16801== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==16801== don't want to do, unless you know exactly what you're doing,
+==16801== or are doing some strange experiment):
+==16801==   /usr/lib/valgrind/../../bin/vgdb --pid=16801 ...command...
+==16801== 
+==16801== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==16801==   /path/to/gdb ./main
+==16801== and then give GDB the following command
+==16801==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=16801
+==16801== --pid is optional if only one valgrind process is running
+==16801== 
+--16801-- REDIR: 0x401cf90 (ld-linux-x86-64.so.2:strlen) redirected to 0x3809e181 (???)
+--16801-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--16801--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--16801--   .. CRC mismatch (computed 2567ccf6 wanted 49420590)
+--16801--    object doesn't have a symbol table
+--16801-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--16801--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--16801--   .. CRC mismatch (computed 0e27c9a8 wanted ac585421)
+--16801--    object doesn't have a symbol table
+==16801== WARNING: new redirection conflicts with existing -- ignoring it
+--16801--     old: 0x0401cf90 (strlen              ) R-> (0000.0) 0x3809e181 ???
+--16801--     new: 0x0401cf90 (strlen              ) R-> (2007.0) 0x04c31020 strlen
+--16801-- REDIR: 0x401b8e0 (ld-linux-x86-64.so.2:index) redirected to 0x4c30bc0 (index)
+--16801-- REDIR: 0x401bb00 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c320d0 (strcmp)
+--16801-- REDIR: 0x401dcf0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c35270 (mempcpy)
+--16801-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21
+--16801--   Considering /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21 ..
+--16801--   .. CRC mismatch (computed 2f26e592 wanted a874dadb)
+--16801--    object doesn't have a symbol table
+--16801-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
+--16801--   Considering /lib/x86_64-linux-gnu/libgcc_s.so.1 ..
+--16801--   .. CRC mismatch (computed b9a68419 wanted 29d51b00)
+--16801--    object doesn't have a symbol table
+--16801-- Reading syms from /lib/x86_64-linux-gnu/libc-2.23.so
+--16801--   Considering /lib/x86_64-linux-gnu/libc-2.23.so ..
+--16801--   .. CRC mismatch (computed b2979fac wanted 1affc958)
+--16801--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.23.so ..
+--16801--   .. CRC is valid
+--16801-- Reading syms from /lib/x86_64-linux-gnu/libm-2.23.so
+--16801--   Considering /lib/x86_64-linux-gnu/libm-2.23.so ..
+--16801--   .. CRC mismatch (computed 8bd88005 wanted 32b88176)
+--16801--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.23.so ..
+--16801--   .. CRC is valid
+--16801-- REDIR: 0x5461a00 (libc.so.6:strcasecmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--16801-- REDIR: 0x545d280 (libc.so.6:strcspn) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--16801-- REDIR: 0x5463cf0 (libc.so.6:strncasecmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--16801-- REDIR: 0x545f6f0 (libc.so.6:strpbrk) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--16801-- REDIR: 0x545fa80 (libc.so.6:strspn) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--16801-- REDIR: 0x546114b (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--16801-- REDIR: 0x545f400 (libc.so.6:rindex) redirected to 0x4c308a0 (rindex)
+--16801-- REDIR: 0x5456130 (libc.so.6:malloc) redirected to 0x4c2db20 (malloc)
+--16801-- REDIR: 0x545d720 (libc.so.6:strlen) redirected to 0x4c30f60 (strlen)
+--16801-- REDIR: 0x5460bf0 (libc.so.6:__GI_memcmp) redirected to 0x4c33b90 (__GI_memcmp)
+--16801-- REDIR: 0x545bcd0 (libc.so.6:strcmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--16801-- REDIR: 0x5471570 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c31f90 (strcmp)
+--16801-- REDIR: 0x4ec7e60 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4c2e080 (operator new(unsigned long))
+==16801== 
+==16801== Process terminating with default action of signal 2 (SIGINT)
+==16801==    at 0x54C9230: __read_nocancel (syscall-template.S:84)
+==16801==    by 0x544C5E7: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:592)
+==16801==    by 0x544D60D: _IO_default_uflow (genops.c:413)
+==16801==    by 0x5448107: getc (getc.c:38)
+==16801==    by 0x4F23B4C: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+==16801==    by 0x4F30B20: std::istream::sentry::sentry(std::istream&, bool) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+==16801==    by 0x4F30D1D: std::istream::operator>>(int&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+==16801==    by 0x40122A: main (in /home/dino/Documents/Programming-Problems/Trie/main)
+--16801-- REDIR: 0x54564f0 (libc.so.6:free) redirected to 0x4c2ed80 (free)
+==16801== 
+==16801== HEAP SUMMARY:
+==16801==     in use at exit: 72,920 bytes in 2 blocks
+==16801==   total heap usage: 3 allocs, 1 frees, 73,944 bytes allocated
+==16801== 
+==16801== Searching for pointers to 2 not-freed blocks
+==16801== Checked 115,656 bytes
+==16801== 
+==16801== 216 bytes in 1 blocks are still reachable in loss record 1 of 2
+==16801==    at 0x4C2E0EF: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16801==    by 0x401215: main (in /home/dino/Documents/Programming-Problems/Trie/main)
+==16801== 
+==16801== 72,704 bytes in 1 blocks are still reachable in loss record 2 of 2
+==16801==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16801==    by 0x4EC3EFF: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+==16801==    by 0x40106B9: call_init.part.0 (dl-init.c:72)
+==16801==    by 0x40107CA: call_init (dl-init.c:30)
+==16801==    by 0x40107CA: _dl_init (dl-init.c:120)
+==16801==    by 0x4000C69: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+==16801== 
+==16801== LEAK SUMMARY:
+==16801==    definitely lost: 0 bytes in 0 blocks
+==16801==    indirectly lost: 0 bytes in 0 blocks
+==16801==      possibly lost: 0 bytes in 0 blocks
+==16801==    still reachable: 72,920 bytes in 2 blocks
+==16801==         suppressed: 0 bytes in 0 blocks
+==16801== 
+==16801== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==16801== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
